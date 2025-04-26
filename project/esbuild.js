@@ -1,4 +1,5 @@
 const esbuild = require('esbuild');
+const stylePlugin = require('esbuild-style-plugin');
 
 const external = [
   "narraleaf-react",
@@ -20,6 +21,16 @@ const common = {
   minify: true,
   metafile: true,
   sourcemap: true,
+  plugins: [
+    stylePlugin({
+      postcss: {
+        plugins: [
+          require('@tailwindcss/postcss'),
+          require('autoprefixer')
+        ]
+      },
+    }),
+  ],
 }
 
 Promise.all([

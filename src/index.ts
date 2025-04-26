@@ -26,3 +26,4 @@
  * @author: Nomen (helloyork) https://github.com/helloyork
  * @license: MPL-2.0
  */
+import "@/styles/base.css";
